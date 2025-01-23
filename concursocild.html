@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Contact - AgriCulture Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Script formulario-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
+
+  
+
+  <!-- =======================================================
+  * Template Name: AgriCulture
+  * Template URL: https://bootstrapmade.com/agriculture-bootstrap-website-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="contact-page">
+
+  <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/logo2.png" alt="AgriCulture">
+        <!-- <h1 class="sitename">AgriCulture</h1>  -->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="concursocild.html"  class="active">Concurso CILD</a></li>
+          <li><a href="granprix.html" >Gran Prix</a></li>
+          <li><a href="seminario.html">Seminario</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li class="dropdown"><a href="#"><span>Galería</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul> </li>
+              <li><a href="./CILD2017.html">CILD 2017</a></li>
+                  <li><a href="#">CILD 2018</a></li>
+                  <li><a href="#">CILD 2019</a></li>
+                  <li><a href="#">CILD 2021</a></li>
+                  <li><a href="#">CILD 2022</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+    <body>
+     
+      
+      <style>
+        /* Estilo exclusivo para las ventanas emergentes */
+        dialog {
+          border: 2px solid #4CAF50; /* Borde verde */
+          border-radius: 10px;       /* Bordes redondeados */
+          padding: 20px;            /* Espaciado interno */
+          max-width: 600px;         /* Ancho máximo */
+          text-align: left;         /* Texto alineado a la izquierda */
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+          font-family: Arial, sans-serif;
+          line-height: 1.5;
+        }
+    
+        dialog h2, dialog h3 {
+          color: #333;              /* Color del texto */
+        }
+    
+        dialog ul {
+          margin: 10px 0;
+          padding-left: 20px;       /* Indentación para las listas */
+        }
+    
+        dialog li {
+          margin-bottom: 5px;
+        }
+    
+        dialog button {
+          margin-top: 20px;
+          padding: 10px 15px;
+          font-size: 14px;
+          cursor: pointer;
+          border: none;
+          border-radius: 5px;
+          background-color: #f44336; /* Rojo */
+          color: white;
+        }
+    
+        dialog button:hover {
+          background-color: #d32f2f; /* Rojo oscuro al pasar el mouse */
+        }
+
+        button {
+                flex: 1;
+                padding: 12px 20px; /* Espacio interno del botón */
+                background-color: #E30613; /* Color de fondo verde */
+                color: white; /* Color del texto */
+                border: none; /* Sin borde */
+                border-radius: 12px; /* Bordes redondeados */
+                font-size: 16px; /* Tamaño de fuente */
+                cursor: pointer; /* Cambia el cursor cuando pasa sobre el botón */
+                transition: background-color 0.3s, transform 0.2s; /* Transición suave para el color y el tamaño */
+              }
+
+  /* Efecto al pasar el ratón por encima */
+        button:hover {
+          background-color: #860e16; /* Un verde más oscuro al pasar el ratón */
+          transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+        }
+
+        /* Efecto al hacer clic */
+        button:active {
+          background-color: #5a070d; /* Un verde aún más oscuro al hacer clic */
+          transform: scale(0.98); /* Reduce ligeramente el tamaño al hacer clic */
+        }
+
+        .custom-font {
+    font-family: 'Nunito', sans-serif;
+  }
+
+        /* Efecto de enfoque (cuando el botón es seleccionado) */
+        button:focus {
+          outline: none; /* Quita el contorno de enfoque predeterminado */
+          box-shadow: 0 0 5px rgba(18, 27, 18, 0.958); /* Agrega una sombra verde alrededor del botón */
+        }
+              /* Estilos del botón */
+              .download-button {
+                  display: inline-block;
+                  padding: 10px 20px;
+                  font-size: 16px;
+                  font-weight: bold;
+                  color: #fff;
+                  background-color: #0f1011;
+                  border: none;
+                  border-radius: 5px;
+                  text-decoration: none;
+                  text-align: center;
+                  cursor: pointer;
+                  transition: background-color 0.3s ease;
+              }
+
+              .download-button:hover {
+                  background-color: #293037;
+              }
+
+            </style>
+    </head>
+    <body>
+      <div class="container py-5">
+      <h1>Concurso Internacional Latinoamérica Danza</h1>
+      <p>En el año 2017 se establece realizar por primera vez el “CONCURSO INTERNACIONAL LATINOAMÉRICA DANZA”, bajo la coordinación y organización de la Mgter. Laura de Aira, con el objetivo de mostrar el desempeño de diversos solistas y grupos, otorgando la posibilidad de obtener importantes becas de estudio y perfeccionamiento en escuelas internacionales.
+        En su edición especial del 2020, envuelto en la crisis sanitaria ocasionada por la pandemia del COVID 19; el CILD® se replanteó para destacarse como el “I Concurso Coreográfico CILD® 2020”; propuesta destinada a distintos coreógrafos consagrados y emergentes, donde presentaron coreografías para grupos en danza clásica y neoclásica tanto del ámbito nacional como internacional; con el fin de promover y potenciar coreográficamente el concurso con propuestas innovadoras y de calidad artística.
+        Esta edición del CILD® tendrá lugar los días 3, 4 y 5 de octubre del 2025  en el Teatro “Aldo Braga” del Centro Cultural y Educativo Municipal “Brigadier Estanislao López” de la ciudad histórica de San Lorenzo, Provincia de Santa Fe.
+        La entrada al Teatro es libre y gratuita.
+        </p>
+      <div>
+      <h1>Descarga el documento</h1>
+      <p>Puedes descargar el archivo Word con toda la información haciendo clic en el siguiente botón:</p>
+      <a href="documento.docx" download="documento.docx" class="download-button">EXENCIÓN DE RESPÓNSABILIDAD Y DIVULGACIÓN</a>
+      <a href="documento.docx" download="documento.docx" class="download-button">AUTORIZACIÓN DEL PARTICIPANTE MENOR</a>
+      <hr class="my-4" style="border: 1px solid #ccc;">
+    </div>
+      <button onclick="document.getElementById('ventana1').showModal();">Bases- Reglamento</button>
+      <button onclick="document.getElementById('ventana2').showModal();">Inscripción</button>
+      <button onclick="document.getElementById('ventana3').showModal();">Jurado</button>
+      <button onclick="document.getElementById('ventana4').showModal();">Competencia</button>
+      <button onclick="document.getElementById('ventana5').showModal();">Premios y becas</button>
+    
+      <!-- Ventanas emergentes -->
+      <dialog id="ventana1">
+        <p>
+          <div>
+            <h2>Concurso Internacional Latinoamérica Danza</h2>
+            <p>El registro del Concurso Internacional Latinoamérica Danza está abierto a todos los bailarines, clasificándose según modalidad, estilo y edad del participante; presentando en todos los casos 1 (una) variación/coreografía. Las Divisiones serán determinadas por la edad al 3 de octubre de 2025.</p>
+            
+            <h3>Modalidades Clásico de Repertorio y Contemporáneo</h3>
+            <p><strong>Solistas y Dúos:</strong></p>
+            <ul>
+              <li>División Infantil: 08 – 11 años;</li>
+              <li>División Junior: 12 – 17 años;</li>
+              <li>División Senior: 18 – 26 años;</li>
+              <li>División Máster: 27 años en adelante.</li>
+            </ul>
+            <p><strong>Tríos y Grupos:</strong></p>
+            <ul>
+              <li>División Infantil: 09 - 11 años;</li>
+              <li>División Junior: 12 - 17 años;</li>
+              <li>División Senior: 18 - 26 años;</li>
+              <li>División Máster: 27 años en adelante.</li>
+            </ul>
+            
+            <h3>Modalidades Clásico Libre, Jazz, Neoclásico, Danza de Carácter, Street Dance, Hip-Hop, Tango, Folklore Argentino y Folklore Internacional (Brasilero, Español, Paraguayo, Ucraniano, Árabe, otros), Acrodance, Ritmos Libres</h3>
+            <p><strong>Estilos Solistas y Dúos:</strong></p>
+            <ul>
+              <li>División Infantil: hasta 09 años;</li>
+              <li>División Estudiantes: 10 – 14 años;</li>
+              <li>División Junior: 15 – 17 años;</li>
+              <li>División Senior: 18 – 26 años;</li>
+              <li>División Máster: 27 años en adelante.</li>
+            </ul>
+            <p><strong>Estilos Tríos y Grupos:</strong></p>
+            <ul>
+              <li>División Infantil: hasta 11 años;</li>
+              <li>División Junior: 12 – 17 años;</li>
+              <li>División Senior: 18 años en adelante.</li>
+            </ul>
+            
+            <h3>Tiempo de presentaciones:</h3>
+            <ul>
+              <li>Solistas, dos, tríos : División infantil  1´ 30 seg. Máximo.</li>
+              <li>División estudiantes  2´ Máximo</li>
+              <li>División junior, senior y master  3´ Máximo</li>
+              <li>Grupos: Infantil  3´ Máximo.</li>
+              <li>Junior y Senior  4´ Máximo.</li>
+            </ul>
+          </div>
+          
+        </p>
+        <button onclick="document.getElementById('ventana1').close();">Cerrar Ventana</button>
+      </dialog>
+    
+      <dialog id="ventana2">
+        <h2>Inscripción</h2>
+        <p>La inscripción cerrará indefectiblemente el 22 de setiembre de 2025.</p>
+        <p>Completar Formulario de inscripción que se encuentra al final de la página.</p>
+        <p>En el caso de menores de 18 años:</p>
+        <ul>
+          <li>Descargar los Formularios de autorización para menores de 18 años y el de exención de responsabilidad, completarlos y adjuntarlos dentro del formulario de inscripción.</li>
+        </ul>
+        <p>Copia del comprobante del depósito o transferencia de la Inscripción al Concurso correspondiente según el siguiente detalle:</p>
+        <ul>
+          <li>Solistas:</li>
+          <li>Dúos: por cada competidor.</li>
+          <li>Tríos: por cada competidor.</li>
+          <li>Grupos: por cada competidor.</li>
+          <li>Coreografías: por coreografía que compite.</li>
+        </ul>
+        <hr class="my-4" style="border: 1px solid #ccc;">
+        <h4>MEDIOS DE PAGO</h4>
+        <h4>Para Depósitos en Argentina – en Pesos Argentinos ($)</h4>
+        <ul>
+          <li><strong>Banco:</strong> Banco Macro S.A</li>
+          <li><strong>Titular:</strong> </li>
+          <li><strong>Caja de Ahorro Nº:</strong> </li>
+          <li><strong>CBU:</strong> </li>
+          <li><strong>CUIT:</strong> </li>
+        </ul>
+        <h4>Para Depósitos desde el Exterior</h4>
+        <p>Western Union a nombre de</p>
+        <p>La organización enviará un mail confirmando la recepción de los fondos correspondientes. A tal efecto, por favor, asegúrese que su correo electrónico esté escrito correctamente.</p>
+        <button onclick="document.getElementById('ventana2').close();">Cerrar Ventana</button>
+      </dialog>
+    
+      <dialog id="ventana3">
+        <p>
+          Aca van las fotografias y CV de los integrantes del jurado
+        </p>
+        <button onclick="document.getElementById('ventana3').close();">Cerrar Ventana</button>
+      </dialog>
+    
+      <dialog id="ventana4">
+        <h2>Competencia</h2>
+        <p>El CILD® 2025 se desarrollará en una única ronda durante dos días de concurso. La premiación se realizará al cierre de la segunda ronda.</p>
+
+        <h3>Primer día de competencia – 4/10/2025 - 14 Hs.</h3>
+        <p>Modalidades de Clásico de Repertorio, Contemporáneo, Neoclásico, Jazz y Clásico Libre.</p>
+
+        <h3>Segundo día de competencia – 5/10/2025 - 14 Hs.</h3>
+        <p>Modalidades de Street Dance, Hip-Hop, Tango, Danza de Carácter, Folklore Argentino, Folklore Internacional (Brasilero, Español, Paraguayo, Ucraniano, Árabe, otros). Acrodance y Ritmos Libres.</p>
+        <button onclick="document.getElementById('ventana4').close();">Cerrar Ventana</button>
+      </dialog>    
+      <dialog id="ventana5">
+        <h2>Premios y Becas</h2>
+        <p>Los premios serán entregados al cierre de la segunda ronda (5/10/2025).</p>
+
+        <h3>Primeros puestos en solistas, dúos y tríos en todas las Divisiones:</h3>
+        <ul>
+          <li>1º Premio: Medalla de 1º</li>
+          <li>2º Premio: Medalla de 2º</li>
+          <li>3º Premio: Medalla de 3º</li>
+        </ul>
+
+        <h3>Primeros puestos en grupos:</h3>
+        <ul>
+          <li>1°, 2° y 3° premio: Trofeo</li>
+        </ul>
+
+        <h3>Becas CILD® 2023:</h3>
+        <ul>
+          <li>Cuban Classical Ballet School (Miami - EEUU);</li>
+          <li>Lizt Alfonso Dance Cuba, Danza Española (Habana - Cuba) – Danza Fusión;</li>
+          <li>Ajkun Ballet Theatre (Nueva York - EEUU);</li>
+          <li>Estudio Alba Serra (Capital Federal – Argentina);</li>
+          <li>Escuela Fundación Julio Bocca- (Cap. Fed. – Argentina);</li>
+          <li>Barcelona Dance Center (Barcelona- España);</li>
+          <li>Escola Adriana Assaf- Compañía Paulista- (Sao Paulo- Brasil);</li>
+          <li>Selectiva para el concurso Caraguatatuba/2026- Estado de San Pablo - Brasil (Julio/2026);</li>
+        </ul>
+        
+        <p>En breve más becas.</p>
+  
+  <h2>Las becas de estudio y selectivos NO incluyen pasajes ni alojamientos.</h2>
+        <button onclick="document.getElementById('ventana5').close();">Cerrar Ventana</button>
+      </dialog>
+    </div>
+      <div class="container py-5">
+        <h2 class="mb-4">Formulario de inscripción</h2>
+        <h2 class="mb-4" style="color: gold;">Datos del participante(solistas,dúos y tríos)</h2>
+        <form action="#" method="POST" class="row g-3">
+          <!-- 20 inputs -->
+          <div class="col-md-6">
+            <label for="inputName" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="inputName" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputLastName" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="inputLastName" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputDni" class="form-label">Número CI / Pasaporte / DNI</label>
+            <input type="dni" class="form-control" id="inputDni" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputBirthDate" class="form-label">Fecha de Nacimiento</label>
+            <input type="date" class="form-control" id="inputBirthDate" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputEdad" class="form-label">Edad</label>
+            <input type="edad" class="form-control" id="inputEdad" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputCiudadania" class="form-label">Ciudadanía</label>
+            <input type="text" class="form-control" id="inputCiudadania" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail" class="form-label">Correo electrónico</label>
+            <input type="text" class="form-control" id="inputEmail" required>
+          </div>
+          <hr class="my-4" style="border: 1px solid #ccc;">
+          <h2 class="mb-4" style="color: gold;">Concurso CILD</h2>
+          
+          <div class="col-md-6">
+            <label for="inputModalidad" class="form-label">Modalidad en la que se inscribe</label>
+            <input type="text" class="form-control" id="inputModalidad" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputObra" class="form-label">Nombre de la coreografía / Variación / Obra</label>
+            <input type="text" class="form-control" id="inputObra" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputCategoria" class="form-label">Categoría</label>
+            <select class="form-control" id="inputCategoria" required>
+              <option value="" disabled selected>Seleccionar</option>
+              <option value="solista">Solista</option>
+              <option value="duo">Dúo</option>
+              <option value="trio">Trío</option>
+              <option value="grupo">Grupo</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="inputCantidad" class="form-label">Cantidad de integrantes del grupo</label>
+            <input type="text" class="form-control" id="inputCantidad" required>
+          </div>
+          <div class="col-md-12">
+            <label for="inputIntegrantes" class="form-label">Integrantes del Grupo:</label>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Nombre y Apellido</th>
+                  <th>Edad</th>
+                  <th>Responsable (si es menor)</th>
+                  <th>Autorización del Menor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Fila 1 -->
+                <tr>
+                  <td><input type="text" class="form-control" name="nombre_1" required></td>
+                  <td><input type="number" class="form-control" name="edad_1" required></td>
+                  <td><input type="text" class="form-control" name="responsable_1"></td>
+                  <td><input type="text" class="form-control" name="autorizacion_1"></td>
+                </tr>
+                <!-- Fila 2 -->
+                <tr>
+                  <td><input type="text" class="form-control" name="nombre_2" required></td>
+                  <td><input type="number" class="form-control" name="edad_2" required></td>
+                  <td><input type="text" class="form-control" name="responsable_2"></td>
+                  <td><input type="text" class="form-control" name="autorizacion_2"></td>
+                </tr>
+                <!-- Fila 3 -->
+                <tr>
+                  <td><input type="text" class="form-control" name="nombre_3" required></td>
+                  <td><input type="number" class="form-control" name="edad_3" required></td>
+                  <td><input type="text" class="form-control" name="responsable_3"></td>
+                  <td><input type="text" class="form-control" name="autorizacion_3"></td>
+                </tr>
+                <!-- Fila 4 -->
+                <tr>
+                  <td><input type="text" class="form-control" name="nombre_4" required></td>
+                  <td><input type="number" class="form-control" name="edad_4" required></td>
+                  <td><input type="text" class="form-control" name="responsable_4"></td>
+                  <td><input type="text" class="form-control" name="autorizacion_4"></td>
+                </tr>
+                <!-- Fila 5 -->
+                <tr>
+                  <td><input type="text" class="form-control" name="nombre_5" required></td>
+                  <td><input type="number" class="form-control" name="edad_5" required></td>
+                  <td><input type="text" class="form-control" name="responsable_5"></td>
+                  <td><input type="text" class="form-control" name="autorizacion_5"></td>
+                </tr>
+                <tr>
+                  <td><input type="text" class="form-control" name="nombre_6" required></td>
+                  <td><input type="number" class="form-control" name="edad_6" required></td>
+                  <td><input type="text" class="form-control" name="responsable_6"></td>
+                  <td><input type="text" class="form-control" name="autorizacion_6"></td>
+                </tr>
+                <!-- Fila 2 -->
+                <tr>
+                  <td><input type="text" class="form-control" name="nombre_7" required></td>
+                  <td><input type="number" class="form-control" name="edad_7" required></td>
+                  <td><input type="text" class="form-control" name="responsable_7"></td>
+                  <td><input type="text" class="form-control" name="autorizacion_7"></td>
+                </tr>
+                <!-- Fila 3 -->
+                <tr>
+                  <td><input type="text" class="form-control" name="nombre_8" required></td>
+                  <td><input type="number" class="form-control" name="edad_8" required></td>
+                  <td><input type="text" class="form-control" name="responsable_8"></td>
+                  <td><input type="text" class="form-control" name="autorizacion_8"></td>
+                </tr>
+                <!-- Fila 4 -->
+                <tr>
+                  <td><input type="text" class="form-control" name="nombre_9" required></td>
+                  <td><input type="number" class="form-control" name="edad_9" required></td>
+                  <td><input type="text" class="form-control" name="responsable_9"></td>
+                  <td><input type="text" class="form-control" name="autorizacion_9"></td>
+                </tr>
+                <!-- Fila 5 -->
+                <tr>
+                  <td><input type="text" class="form-control" name="nombre_10" required></td>
+                  <td><input type="number" class="form-control" name="edad_10" required></td>
+                  <td><input type="text" class="form-control" name="responsable_10"></td>
+                  <td><input type="text" class="form-control" name="autorizacion_10"></td>
+                </tr>
+                <!-- Puedes agregar más filas según lo necesites -->
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-6">
+            <label for="inputDivision" class="form-label">División</label>
+            <select class="form-control" id="inputDivision" required>
+              <option value="" disabled selected>Seleccionar</option>
+              <option value="infantil">Infantil</option>
+              <option value="joveneso">Jóvenes</option>
+              <option value="estudiantes">Estudiantes</option>
+              <option value="juniors">Juniors</option>
+              <option value="seniors">Seniors</option>
+              <option value="masters">Masters</option>
+            </select>
+          </div>
+          
+          <div class="col-md-12">
+            <label for="inputCoreografia" class="form-label">¿Compite en Coreografía?</label>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="inputCoreografiaSi" name="coreografia" value="si" required>
+              <label class="form-check-label" for="inputCoreografiaSi">Sí</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="inputCoreografiaNo" name="coreografia" value="no" required>
+              <label class="form-check-label" for="inputCoreografiaNo">No</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="inputWebsite" class="form-label">Coreógrafo(En caso afirmativo)</label>
+            <input type="url" class="form-control" id="inputWebsite">
+          </div>
+          <hr class="my-4" style="border: 1px solid #ccc;">
+          <h2 class="mb-4" style="color: gold;">Autorización del participante menor</h2>
+          <p>En el caso de un menor, deberá descargar el Formulario de autorización para menores de 18 años, completarlo y adjuntarlo a continuación:</p>
+          <div class="col-md-6">
+            <label for="inputFile1" class="form-label">Subir archivo PDF</label>
+            <input type="file" class="form-control" id="inputFile1" accept="application/pdf">
+          </div>
+          <hr class="my-4" style="border: 1px solid #ccc;">
+          <h2 class="mb-4" style="color: gold;">Exención de responsabilidad y divulgación</h2>
+          <p>En el caso de un menor, deberá descargar el Formulario de exención de responsabilidad, completarlo y adjuntarlo a continuación:</p>
+          <div class="col-md-6">
+            <label for="inputFile2" class="form-label">Subir archivo PDF</label>
+            <input type="file" class="form-control" id="inputFile2" accept="application/pdf">
+          </div>
+          <hr class="my-4" style="border: 1px solid #ccc;">
+          <h2 class="mb-4" style="color: gold;">Comprobante de pago</h2>
+          <p>Adjuntar copia del comprobante del depósito o transferencia de la inscripción al concurso:</p>
+          <div class="col-md-6">
+            <label for="inputFile3" class="form-label">Subir archivo PDF</label>
+            <input type="file" class="form-control" id="inputFile3" accept="application/pdf">
+          </div>
+          <div class="col-12">
+            <button type="button" id="generatePdf" class="btn btn-primary">Generar PDF</button>
+          </div>
+        </form>
+      </div>
+    <!-- Page Title 
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
+      <div class="container position-relative">
+        <h1>Contact</h1>
+        <p>
+          Home
+          /
+          Contact
+        </p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Contact</li>
+          </ol>
+        </nav>
+      </div>
+    </div> End Page Title -->
+
+    <!-- Contact Section -->
+    <!--<section id="contact" class="contact section">
+
+      <div class="mb-5">
+        <iframe style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen=""></iframe>
+      </div> End Google Maps 
+
+      <div class="container" data-aos="fade">
+
+        <div class="row gy-5 gx-lg-5">
+
+          <div class="col-lg-4">
+
+            <div class="info">
+              <h3>Get in touch</h3>
+              <p>Et id eius voluptates atque nihil voluptatem enim in tempore minima sit ad mollitia commodi minus.</p>
+
+              <div class="info-item d-flex">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h4>Location:</h4>
+                  <p>A108 Adam Street, New York, NY 535022</p>
+                </div>
+              </div>End Info Item 
+
+              <div class="info-item d-flex">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h4>Email:</h4>
+                  <p>info@example.com</p>
+                </div>
+              </div> End Info Item 
+
+              <div class="info-item d-flex">
+                <i class="bi bi-phone flex-shrink-0"></i>
+                <div>
+                  <h4>Call:</h4>
+                  <p>+1 5589 55488 55</p>
+                </div>
+              </div>End Info Item 
+
+            </div>
+
+          </div> -->
+
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">Concurso Internacional Latinoamérica de Danza</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Teatro Actor Aldo Braga, Entre Ríos 510, 
+                San Lorenzo, Santa Fe, Argentina. </p>
+            </div>
+          </div>
+          
+          <div class="col-lg-2 col-md-3 footer-links">
+            
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            
+            <img src="assets/img/logosanlorenzo.png" alt="AgriCulture">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright text-center">
+      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          
+          <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
+            Designed by <a href="https://crismar.com">CrisMar</a>
+          </div>
+        </div>
+
+        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+          <a href=""><i class="bi bi-twitter-x"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
+
+</body>
+
+</html>
