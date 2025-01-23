@@ -28,6 +28,7 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/estilosventanas.css" rel="stylesheet">
 
   <!-- Script formulario-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
@@ -84,101 +85,7 @@
     <body>
      
       
-      <style>
-        /* Estilo exclusivo para las ventanas emergentes */
-        dialog {
-          border: 2px solid #4CAF50; /* Borde verde */
-          border-radius: 10px;       /* Bordes redondeados */
-          padding: 20px;            /* Espaciado interno */
-          max-width: 600px;         /* Ancho máximo */
-          text-align: left;         /* Texto alineado a la izquierda */
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-          font-family: Arial, sans-serif;
-          line-height: 1.5;
-        }
-    
-        dialog h2, dialog h3 {
-          color: #333;              /* Color del texto */
-        }
-    
-        dialog ul {
-          margin: 10px 0;
-          padding-left: 20px;       /* Indentación para las listas */
-        }
-    
-        dialog li {
-          margin-bottom: 5px;
-        }
-    
-        dialog button {
-          margin-top: 20px;
-          padding: 10px 15px;
-          font-size: 14px;
-          cursor: pointer;
-          border: none;
-          border-radius: 5px;
-          background-color: #f44336; /* Rojo */
-          color: white;
-        }
-    
-        dialog button:hover {
-          background-color: #d32f2f; /* Rojo oscuro al pasar el mouse */
-        }
-
-        button {
-                flex: 1;
-                padding: 12px 20px; /* Espacio interno del botón */
-                background-color: #E30613; /* Color de fondo verde */
-                color: white; /* Color del texto */
-                border: none; /* Sin borde */
-                border-radius: 12px; /* Bordes redondeados */
-                font-size: 16px; /* Tamaño de fuente */
-                cursor: pointer; /* Cambia el cursor cuando pasa sobre el botón */
-                transition: background-color 0.3s, transform 0.2s; /* Transición suave para el color y el tamaño */
-              }
-
-  /* Efecto al pasar el ratón por encima */
-        button:hover {
-          background-color: #860e16; /* Un verde más oscuro al pasar el ratón */
-          transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
-        }
-
-        /* Efecto al hacer clic */
-        button:active {
-          background-color: #5a070d; /* Un verde aún más oscuro al hacer clic */
-          transform: scale(0.98); /* Reduce ligeramente el tamaño al hacer clic */
-        }
-
-        .custom-font {
-    font-family: 'Nunito', sans-serif;
-  }
-
-        /* Efecto de enfoque (cuando el botón es seleccionado) */
-        button:focus {
-          outline: none; /* Quita el contorno de enfoque predeterminado */
-          box-shadow: 0 0 5px rgba(18, 27, 18, 0.958); /* Agrega una sombra verde alrededor del botón */
-        }
-              /* Estilos del botón */
-              .download-button {
-                  display: inline-block;
-                  padding: 10px 20px;
-                  font-size: 16px;
-                  font-weight: bold;
-                  color: #fff;
-                  background-color: #0f1011;
-                  border: none;
-                  border-radius: 5px;
-                  text-decoration: none;
-                  text-align: center;
-                  cursor: pointer;
-                  transition: background-color 0.3s ease;
-              }
-
-              .download-button:hover {
-                  background-color: #293037;
-              }
-
-            </style>
+      
     </head>
     <body>
       <div class="container py-5">
@@ -275,21 +182,43 @@
         <h4>Para Depósitos en Argentina – en Pesos Argentinos ($)</h4>
         <ul>
           <li><strong>Banco:</strong> Banco Macro S.A</li>
-          <li><strong>Titular:</strong> </li>
-          <li><strong>Caja de Ahorro Nº:</strong> </li>
-          <li><strong>CBU:</strong> </li>
-          <li><strong>CUIT:</strong> </li>
+          <li><strong>Titular:</strong> Christtin Ramon Omar </li>
+          <li><strong>Caja de Ahorro Nº:</strong> 4014000004760469 </li>
+          <li><strong>CBU:</strong> 2850014040000047604694 </li>
+          <li><strong>Alias:</strong> FOCA.ANANA.CATRE </li>
         </ul>
         <h4>Para Depósitos desde el Exterior</h4>
-        <p>Western Union a nombre de</p>
+        <p>Western Union a nombre de Ricardo César Ferreira- DNI 22.835.833</p>
         <p>La organización enviará un mail confirmando la recepción de los fondos correspondientes. A tal efecto, por favor, asegúrese que su correo electrónico esté escrito correctamente.</p>
         <button onclick="document.getElementById('ventana2').close();">Cerrar Ventana</button>
       </dialog>
     
       <dialog id="ventana3">
         <p>
-          Aca van las fotografias y CV de los integrantes del jurado
+          Los integrantes del jurado son:
         </p>
+        <button onclick="document.getElementById('ventana6').showModal();">Daniel Bartra Encina</button>
+      <dialog id="ventana6">
+        <p>
+          Daniel Bartra es un maestro, coreógrafo y director con vasta trayectoria a nivel nacional e internacional en el área artística y docente. Creó el Método Bartra de Acondicionamiento Biomecánico Funcional, aplicado en el Seminario de Danzas Clásicas Nora Irinova del Teatro del Libertador General San Martín. Formado en la Escuela Municipal de Danza Clásica de Corrientes, se perfeccionó con reconocidos maestros en diversas disciplinas. Integró el Ballet de Cámara de Corrientes y el Modern Jazz Ballet en Buenos Aires, siendo contratado por el Teatro Colón. Participó en TV para Ideas del Sur en "Soñando por cantar". Ha sido docente en diversas instituciones, como la Universidad Nacional de las Artes y la Fundación Julio Bocca. Dicta cursos y charlas en el país y el exterior, y es jurado en certámenes internacionales. Representó a Argentina en Ecuador, Libia y Polonia. Actualmente radicado en Córdoba, continúa su labor docente y la difusión del Método Bartra, recientemente patentado.
+        </p>
+        <button onclick="document.getElementById('ventana6').close();">Cerrar Ventana</button>
+      </dialog>
+        <button onclick="document.getElementById('ventana7').showModal();">Alexander Nikolaievich Ananiev
+        </button>
+        <dialog id="ventana7">
+          <p>
+            Alexander trabajó como bailarín en compañías rusas como Kirov, Bolshoi y Ensamble P.O.V de Cámara de Moscú, abordando repertorios contemporáneos y folclóricos. En 1994 llegó a Argentina, alternando roles de bailarín, coreógrafo y maestro en el Instituto Superior de Arte y el Ballet Estable de San Juan. Luego se desempeñó como ensayista, bailarín solista y coreógrafo. En el Teatro Colón dictó clases y fue maestro ensayista. Participó como jurado en certámenes internacionales. De 2009 a 2014 fue maestro de ballet en el Centro del Conocimiento y la Academia de Ballet de Moscú en Posadas, Misiones. Desde 2015 es maestro y ensayista del Ballet Oficial de Córdoba, también es coreógrafo y repositor, además de maestro del Seminario de Danzas Nora Irinova del Teatro del Libertador San Martín en Córdoba.
+          </p>
+          <button onclick="document.getElementById('ventana7').close();">Cerrar Ventana</button>
+        </dialog>
+        <button onclick="document.getElementById('ventana8').showModal();">Alba Serra</button>
+        <dialog id="ventana8">
+          <p>
+            Alba comenzó sus estudios a los 5 años en Junín con la profesora Sara Cedrola y a los 16 se graduó del Instituto Superior de Danzas de Junín. Practicó gimnasia artística desde los 5 hasta los 17 años en el Club Junín con el profesor Cary Mollier. Ganó el concurso Latinoamericano de Ballet a los 15 años y permaneció en México 48 días. A los 17 años se mudó a Capital Federal, donde integró el Ballet de la Ciudad de Buenos Aires, el Ballet del Mercosur y Neoclásico. Ganó el concurso Todo Ballet en 1996 y permaneció 1 año en Pro Danza de Cuba. Entre 2001 y 2003 bailó en diversas compañías en EE.UU., realizando giras. En 2007, bailó en las aperturas de productos de L'Oreal en eventos como La Rural y Luna Park. Obtuvo múltiples medallas en concursos. Trabajó en óperas y ballets en el Teatro Colón. Desde 2009, es maestra y ensayista, con su propio estudio de ballet y un grupo de jóvenes bailarines talentosos. En 2019, su alumna Romina García Vázquez ganó el concurso Paloma Herrera y obtuvo becas para el Prix de Lausanne. En 2019 fue invitada a dar clases en Acámbaro, México. Sus funciones combinan clásicos de repertorio y obras neoclásicas de su creación.
+          </p>
+          <button onclick="document.getElementById('ventana8').close();">Cerrar Ventana</button>
+        </dialog>
         <button onclick="document.getElementById('ventana3').close();">Cerrar Ventana</button>
       </dialog>
     
@@ -514,24 +443,31 @@
           <p>En el caso de un menor, deberá descargar el Formulario de autorización para menores de 18 años, completarlo y adjuntarlo a continuación:</p>
           <div class="col-md-6">
             <label for="inputFile1" class="form-label">Subir archivo PDF</label>
-            <input type="file" class="form-control" id="inputFile1" accept="application/pdf">
+            <input type="file" class="form-control" id="inputFile1" accept="application/pdf" name="file1">
           </div>
           <hr class="my-4" style="border: 1px solid #ccc;">
           <h2 class="mb-4" style="color: gold;">Exención de responsabilidad y divulgación</h2>
           <p>En el caso de un menor, deberá descargar el Formulario de exención de responsabilidad, completarlo y adjuntarlo a continuación:</p>
           <div class="col-md-6">
             <label for="inputFile2" class="form-label">Subir archivo PDF</label>
-            <input type="file" class="form-control" id="inputFile2" accept="application/pdf">
+            <input type="file" class="form-control" id="inputFile2" accept="application/pdf" name="file2">
           </div>
           <hr class="my-4" style="border: 1px solid #ccc;">
           <h2 class="mb-4" style="color: gold;">Comprobante de pago</h2>
           <p>Adjuntar copia del comprobante del depósito o transferencia de la inscripción al concurso:</p>
           <div class="col-md-6">
             <label for="inputFile3" class="form-label">Subir archivo PDF</label>
-            <input type="file" class="form-control" id="inputFile3" accept="application/pdf">
+            <input type="file" class="form-control" id="inputFile3" accept="application/pdf" name="file3">
+          </div>
+          <hr class="my-4" style="border: 1px solid #ccc;">
+          <h2 class="mb-4" style="color: gold;">Adjuntar MP3</h2>
+          <p>Adjuntar archivo mp3:</p>
+          <div class="col-md-6">
+            <label for="inputFile4" class="form-label">Subir archivo MP3</label>
+            <input type="file" class="form-control" id="inputFile4" accept=".mp3" name="file4">
           </div>
           <div class="col-12">
-            <button type="button" id="generatePdf" class="btn btn-primary">Generar PDF</button>
+            <button type="button" id="generatePdf" class="btn btn-primary">Enviar formulario</button>
           </div>
         </form>
       </div>
@@ -636,31 +572,6 @@
         </div>
       </div>
     </div>
-
-    <div class="copyright text-center">
-      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
-
-        <div class="d-flex flex-column align-items-center align-items-lg-start">
-          
-          <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
-            Designed by <a href="https://crismar.com">CrisMar</a>
-          </div>
-        </div>
-
-        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-          <a href=""><i class="bi bi-twitter-x"></i></a>
-          <a href=""><i class="bi bi-facebook"></i></a>
-          <a href=""><i class="bi bi-instagram"></i></a>
-          <a href=""><i class="bi bi-linkedin"></i></a>
-        </div>
-
-      </div>
-    </div>
-
   </footer>
 
   <!-- Scroll Top -->

@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Obtener y procesar los archivos cargados
-    const fileInputs = ['inputFile1', 'inputFile2', 'inputFile3']; // IDs de los campos de archivo
+    const fileInputs = ['inputFile1', 'inputFile2', 'inputFile3', 'inputFile4']; // IDs de los campos de archivo
     for (const inputId of fileInputs) {
       const fileInput = document.getElementById(inputId);
       if (fileInput && fileInput.files.length > 0) {
@@ -100,31 +100,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Guardar el PDF combinado
-    // Guardar el PDF como Blob
-const pdfBlob = doc.output("blob");
+    const pdfBlob = doc.output("blob");
 
-// Enviar el PDF al servidor
-const formData = new FormData();
-formData.append("pdf", pdfBlob, "formulario_con_archivos.pdf");
+    // Enviar el PDF y los archivos al servidor
+    const formData = new FormData();
+    formData.append("pdf", pdfBlob, "formulario_con_archivos.pdf");
+    for (const inputId of fileInputs) {
+      const fileInput = document.getElementById(inputId);
+      if (fileInput && fileInput.files.length > 0) {
+        formData.append(fileInput.name, fileInput.files[0]);
+      }
+    }
 
-try {
-    const response = await fetch("http://localhost:3000/upload-pdf", {
+    try {
+      const response = await fetch("http://localhost:3000/upload-pdf", {
         method: "POST",
         body: formData,
-    });
-    if (response.ok) {
-        alert("PDF enviado al servidor con éxito.");
-    } else {
-        alert("Error al enviar el PDF al servidor.");
+      });
+      if (response.ok) {
+        alert("PDF y archivos enviados al servidor con éxito.");
+      } else {
+        alert("Error al enviar el PDF y archivos al servidor.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error al conectar con el servidor.");
     }
-} catch (error) {
-    console.error("Error:", error);
-    alert("Error al conectar con el servidor.");
-}
 
   });
 });
-
 
 
 
