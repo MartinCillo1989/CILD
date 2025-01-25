@@ -29,6 +29,11 @@
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/estilosventanas.css" rel="stylesheet">
 
+  <!-- Script formulario-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
   <!-- =======================================================
   * Template Name: AgriCulture
   * Template URL: https://bootstrapmade.com/agriculture-bootstrap-website-template/
@@ -136,6 +141,7 @@
     </div>
       <div class="container py-5">
         <h2 class="mb-4">Formulario de inscripción</h2>
+        <input type="hidden" id="formName" value="Seminario">
         
         <form action="#" method="POST" class="row g-3">
           <!-- 20 inputs -->
@@ -196,7 +202,9 @@
             <label for="inputFile" class="form-label">Subir archivo PDF</label>
             <input type="file" class="form-control" id="inputFile" accept=".pdf" required>
           </div>
-  
+          <div class="col-12">
+            <button type="button" id="generatePdf" class="btn btn-primary">Enviar formulario</button>
+          </div>
         </form>
       </div>
  

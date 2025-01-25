@@ -12,8 +12,9 @@ const PORT = 3000;
 // Configuración de Multer para manejar archivos subidos
 const upload = multer({ dest: "uploads/" });
 
-// Middleware para procesar JSON
+// Middleware para procesar JSON y form-data
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Ruta para recibir el PDF y otros archivos
 app.post("/upload-pdf", upload.fields([
@@ -23,7 +24,8 @@ app.post("/upload-pdf", upload.fields([
   { name: 'file3', maxCount: 1 },
   { name: 'file4', maxCount: 1 } // Para el archivo MP3
 ]), async (req, res) => {
-  const { files } = req;
+  const { files, body } = req; // Añadimos body aquí para recoger los datos enviados desde el frontend
+  const { formName } = body; // Desestructuramos formName del body
 
   if (!files || !files.pdf) {
     return res.status(400).send("No se recibió ningún archivo PDF.");
@@ -36,8 +38,8 @@ app.post("/upload-pdf", upload.fields([
       port: 465,
       secure: true, // Usa SSL
       auth: {
-        user: 'cillomartin.89@gmail.com',
-        pass: 'obbb gscq oqpe dfsd', // Usa la App Password generada
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
@@ -61,8 +63,8 @@ app.post("/upload-pdf", upload.fields([
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: "cillo_747@hotmail.com", // Cambia al correo del destinatario
-      subject: "Formulario PDF y Archivos Adjuntos",
-      text: "Adjunto encontrarás el formulario en formato PDF y otros archivos.",
+      subject: `Formulario ${formName}`, // Incluimos formName en el asunto
+      text: `Adjunto encontrarás el formulario ${formName} en formato PDF y otros archivos.`,
       attachments: attachments,
     };
 

@@ -6,7 +6,6 @@
 * License: https://bootstrapmade.com/license/
 */
 
-
 /*FUNCIONES DEL FORMULARIO*/
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('generatePdf').addEventListener('click', async function () {
@@ -36,13 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
       'Division': getElementValue('inputDivision'),
       'Coreografía': document.querySelector('input[name="coreografia"]:checked')?.value || "No especificado",
       'Tipo de coreo': getElementValue('inputWebsite'),
-      'Grand prix categoría': document.querySelector('input[name="categoria"]:checked').value,
-      'Grand prix división': document.querySelector('input[name="division"]:checked').value,
+      'Grand prix categoría': document.querySelector('input[name="categoria"]:checked')?.value || "No especificado",
+      'Grand prix división': document.querySelector('input[name="division"]:checked')?.value || "No especificado",
       'Primera variación clásica': getElementValue('inputPrimeravariacion'),
       'Segunda variación clásica': getElementValue('inputSegundavariacion'),
       'Coreografía de contemporáneo': getElementValue('inputCoreoContem'),
-      'Duración comtemporáneo': getElementValue('inputDuracionContem'),
+      'Duración contemporáneo': getElementValue('inputDuracionContem'),
       'Pas de Deux': getElementValue('inputPasDeDeux'),
+      'Formulario': getElementValue('formName') // Incluimos el campo oculto formName aquí
     };
 
     // Crear contenido principal del PDF
@@ -63,6 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const fileInputs = ['inputFile1', 'inputFile2']; // Ajusta los IDs según tus inputs de archivo
     const formDataToSend = new FormData();
     formDataToSend.append("pdf", pdfBlob, "formulario_con_archivos.pdf");
+
+    // Añadir el nombre del formulario al FormData
+    formDataToSend.append("formName", getElementValue('formName')); // Aquí se añadió esta línea
 
     for (const inputId of fileInputs) {
       const fileInput = document.getElementById(inputId);
@@ -88,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
 
 
 
