@@ -8,7 +8,6 @@
 
 
 /*FUNCIONES DEL FORMULARIO*/
-
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('generatePdf').addEventListener('click', async function () {
     const { jsPDF } = window.jspdf;
@@ -22,100 +21,60 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Capturar datos del formulario
-    const name = getElementValue('inputName');
-    const lastName = getElementValue('inputLastName');
-    const email = getElementValue('inputEmail');
-    const dni = getElementValue('inputDni');
-    const fechaNacimiento = getElementValue('inputBirthDate');
-    const edad = getElementValue('inputEdad');
-    const ciudadania = getElementValue('inputCiudadania');
-    const modalidad = getElementValue('inputModalidad');
-    const nombreCoreo = getElementValue('inputObra');
-    const categoria = getElementValue('inputCategoria');
-    const cantidadIntegrantes = getElementValue('inputCantidad');
-    const division = getElementValue('inputDivision');
-    const compiteEnCoreografia = document.querySelector('input[name="coreografia"]:checked')?.value || "No especificado";
-    const tipoCoreo = getElementValue('inputWebsite');
+    const formData = {
+      'Nombre': getElementValue('inputName'),
+      'Apellido': getElementValue('inputLastName'),
+      'Correo electrónico': getElementValue('inputEmail'),
+      'Dni': getElementValue('inputDni'),
+      'Fecha de nacimiento': getElementValue('inputBirthDate'),
+      'Edad': getElementValue('inputEdad'),
+      'Ciudadanía': getElementValue('inputCiudadania'),
+      'Modalidad': getElementValue('inputModalidad'),
+      'Nombre coreo': getElementValue('inputObra'),
+      'Categoría': getElementValue('inputCategoria'),
+      'Cantidad de integrantes': getElementValue('inputCantidad'),
+      'Division': getElementValue('inputDivision'),
+      'Coreografía': document.querySelector('input[name="coreografia"]:checked')?.value || "No especificado",
+      'Tipo de coreo': getElementValue('inputWebsite'),
+      'Grand prix categoría': document.querySelector('input[name="categoria"]:checked').value,
+      'Grand prix división': document.querySelector('input[name="division"]:checked').value,
+      'Primera variación clásica': getElementValue('inputPrimeravariacion'),
+      'Segunda variación clásica': getElementValue('inputSegundavariacion'),
+      'Coreografía de contemporáneo': getElementValue('inputCoreoContem'),
+      'Duración comtemporáneo': getElementValue('inputDuracionContem'),
+      'Pas de Deux': getElementValue('inputPasDeDeux'),
+    };
 
     // Crear contenido principal del PDF
     doc.setFontSize(12);
-    doc.text(`Nombre: ${name}`, 10, 10);
-    doc.text(`Apellido: ${lastName}`, 10, 20);
-    doc.text(`Correo electrónico: ${email}`, 10, 30);
-    doc.text(`Dni: ${dni}`, 10, 40);
-    doc.text(`Fecha de nacimiento: ${fechaNacimiento}`, 10, 50);
-    doc.text(`Edad: ${edad}`, 10, 60);
-    doc.text(`Ciudadanía: ${ciudadania}`, 10, 70);
-    doc.text(`Modalidad: ${modalidad}`, 10, 80);
-    doc.text(`Nombre coreo: ${nombreCoreo}`, 10, 90);
-    doc.text(`Categoría: ${categoria}`, 10, 100);
-    doc.text(`Cantidad de integrantes: ${cantidadIntegrantes}`, 10, 110);
-    doc.text(`Division: ${division}`, 10, 120);
-    doc.text(`Coreografía: ${compiteEnCoreografia}`, 10, 130);
-    doc.text(`Tipo de coreo: ${tipoCoreo}`, 10, 140);
+    let yPos = 10; // Posición inicial en Y para el texto
 
-    // Función para procesar un archivo PDF
-    const processFile = async (file, doc) => {
-      if (file && file.type === "application/pdf") {
-        const fileReader = new FileReader();
-        return new Promise((resolve) => {
-          fileReader.onload = async function () {
-            const pdfData = new Uint8Array(this.result);
-
-            // Cargar el PDF usando PDF.js
-            const loadingTask = pdfjsLib.getDocument({ data: pdfData });
-            const pdf = await loadingTask.promise;
-
-            for (let i = 1; i <= pdf.numPages; i++) {
-              const page = await pdf.getPage(i);
-              const viewport = page.getViewport({ scale: 1 });
-
-              // Crear un canvas temporal para renderizar la página
-              const canvas = document.createElement('canvas');
-              const context = canvas.getContext('2d');
-              canvas.width = viewport.width;
-              canvas.height = viewport.height;
-
-              await page.render({ canvasContext: context, viewport: viewport }).promise;
-
-              // Convertir el canvas a imagen y añadirla al PDF generado
-              const imgData = canvas.toDataURL('image/png');
-              doc.addPage();
-              doc.addImage(imgData, 'PNG', 10, 10, 190, 277);
-            }
-            resolve();
-          };
-          fileReader.readAsArrayBuffer(file);
-        });
+    Object.entries(formData).forEach(([key, value]) => {
+      if (value) {
+        doc.text(`${key}: ${value}`, 10, yPos);
+        yPos += 10; // Incrementa la posición Y para la siguiente línea de texto
       }
-    };
+    });
 
-    // Obtener y procesar los archivos cargados
-    const fileInputs = ['inputFile1', 'inputFile2', 'inputFile3', 'inputFile4']; // IDs de los campos de archivo
+    // Guardar el PDF generado en un Blob
+    const pdfBlob = doc.output('blob');
+
+    // Recoger los archivos adicionales del formulario
+    const fileInputs = ['inputFile1', 'inputFile2']; // Ajusta los IDs según tus inputs de archivo
+    const formDataToSend = new FormData();
+    formDataToSend.append("pdf", pdfBlob, "formulario_con_archivos.pdf");
+
     for (const inputId of fileInputs) {
       const fileInput = document.getElementById(inputId);
       if (fileInput && fileInput.files.length > 0) {
-        await processFile(fileInput.files[0], doc);
-      }
-    }
-
-    // Guardar el PDF combinado
-    const pdfBlob = doc.output("blob");
-
-    // Enviar el PDF y los archivos al servidor
-    const formData = new FormData();
-    formData.append("pdf", pdfBlob, "formulario_con_archivos.pdf");
-    for (const inputId of fileInputs) {
-      const fileInput = document.getElementById(inputId);
-      if (fileInput && fileInput.files.length > 0) {
-        formData.append(fileInput.name, fileInput.files[0]);
+        formDataToSend.append(fileInput.name, fileInput.files[0]);
       }
     }
 
     try {
       const response = await fetch("http://localhost:3000/upload-pdf", {
         method: "POST",
-        body: formData,
+        body: formDataToSend,
       });
       if (response.ok) {
         alert("PDF y archivos enviados al servidor con éxito.");
@@ -123,10 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("Error al enviar el PDF y archivos al servidor.");
       }
     } catch (error) {
+      // Agregamos más detalles al mensaje de error en el catch
       console.error("Error:", error);
-      alert("Error al conectar con el servidor.");
+      alert(`Error al conectar con el servidor. Detalles del error: ${error.message}`);
     }
-
   });
 });
 

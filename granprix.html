@@ -28,6 +28,11 @@
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/estilosventanas.css" rel="stylesheet">
 
+  <!-- Script formulario-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
   <!-- =======================================================
   * Template Name: AgriCulture
   * Template URL: https://bootstrapmade.com/agriculture-bootstrap-website-template/
@@ -134,8 +139,30 @@
     
       <dialog id="ventana3">
         <p>
-          Aca van las fotografias y CV de los integrantes del jurado
+          Los integrantes del jurado son:
         </p>
+        <button onclick="document.getElementById('ventana6').showModal();">Daniel Bartra Encina</button>
+      <dialog id="ventana6">
+        <p>
+          Daniel Bartra es un maestro, coreógrafo y director con vasta trayectoria a nivel nacional e internacional en el área artística y docente. Creó el Método Bartra de Acondicionamiento Biomecánico Funcional, aplicado en el Seminario de Danzas Clásicas Nora Irinova del Teatro del Libertador General San Martín. Formado en la Escuela Municipal de Danza Clásica de Corrientes, se perfeccionó con reconocidos maestros en diversas disciplinas. Integró el Ballet de Cámara de Corrientes y el Modern Jazz Ballet en Buenos Aires, siendo contratado por el Teatro Colón. Participó en TV para Ideas del Sur en "Soñando por cantar". Ha sido docente en diversas instituciones, como la Universidad Nacional de las Artes y la Fundación Julio Bocca. Dicta cursos y charlas en el país y el exterior, y es jurado en certámenes internacionales. Representó a Argentina en Ecuador, Libia y Polonia. Actualmente radicado en Córdoba, continúa su labor docente y la difusión del Método Bartra, recientemente patentado.
+        </p>
+        <button onclick="document.getElementById('ventana6').close();">Cerrar Ventana</button>
+      </dialog>
+        <button onclick="document.getElementById('ventana7').showModal();">Alexander Nikolaievich Ananiev
+        </button>
+        <dialog id="ventana7">
+          <p>
+            Alexander trabajó como bailarín en compañías rusas como Kirov, Bolshoi y Ensamble P.O.V de Cámara de Moscú, abordando repertorios contemporáneos y folclóricos. En 1994 llegó a Argentina, alternando roles de bailarín, coreógrafo y maestro en el Instituto Superior de Arte y el Ballet Estable de San Juan. Luego se desempeñó como ensayista, bailarín solista y coreógrafo. En el Teatro Colón dictó clases y fue maestro ensayista. Participó como jurado en certámenes internacionales. De 2009 a 2014 fue maestro de ballet en el Centro del Conocimiento y la Academia de Ballet de Moscú en Posadas, Misiones. Desde 2015 es maestro y ensayista del Ballet Oficial de Córdoba, también es coreógrafo y repositor, además de maestro del Seminario de Danzas Nora Irinova del Teatro del Libertador San Martín en Córdoba.
+          </p>
+          <button onclick="document.getElementById('ventana7').close();">Cerrar Ventana</button>
+        </dialog>
+        <button onclick="document.getElementById('ventana8').showModal();">Alba Serra</button>
+        <dialog id="ventana8">
+          <p>
+            Alba comenzó sus estudios a los 5 años en Junín con la profesora Sara Cedrola y a los 16 se graduó del Instituto Superior de Danzas de Junín. Practicó gimnasia artística desde los 5 hasta los 17 años en el Club Junín con el profesor Cary Mollier. Ganó el concurso Latinoamericano de Ballet a los 15 años y permaneció en México 48 días. A los 17 años se mudó a Capital Federal, donde integró el Ballet de la Ciudad de Buenos Aires, el Ballet del Mercosur y Neoclásico. Ganó el concurso Todo Ballet en 1996 y permaneció 1 año en Pro Danza de Cuba. Entre 2001 y 2003 bailó en diversas compañías en EE.UU., realizando giras. En 2007, bailó en las aperturas de productos de L'Oreal en eventos como La Rural y Luna Park. Obtuvo múltiples medallas en concursos. Trabajó en óperas y ballets en el Teatro Colón. Desde 2009, es maestra y ensayista, con su propio estudio de ballet y un grupo de jóvenes bailarines talentosos. En 2019, su alumna Romina García Vázquez ganó el concurso Paloma Herrera y obtuvo becas para el Prix de Lausanne. En 2019 fue invitada a dar clases en Acámbaro, México. Sus funciones combinan clásicos de repertorio y obras neoclásicas de su creación.
+          </p>
+          <button onclick="document.getElementById('ventana8').close();">Cerrar Ventana</button>
+        </dialog>
         <button onclick="document.getElementById('ventana3').close();">Cerrar Ventana</button>
       </dialog>
     
@@ -360,8 +387,8 @@
           </div>
           <h2 class="mb-4" style="color: gold;">Solistas</h2>
           <div class="col-md-6">
-            <label for="inputPrimeravacion" class="form-label">Primera variación clásica</label>
-            <input type="text" class="form-control" id="inputPrimeravacion" required>
+            <label for="inputPrimeravariacion" class="form-label">Primera variación clásica</label>
+            <input type="text" class="form-control" id="inputPrimeravariacion" required>
           </div>
           <div class="col-md-6">
             <label for="inputSegundavariacion" class="form-label">Segunda variación clásica</label>
@@ -401,6 +428,9 @@
           <div class="col-md-6">
             <label for="inputFile" class="form-label">Subir archivo PDF</label>
             <input type="file" class="form-control" id="inputFile" accept=".pdf" required>
+          </div>
+          <div class="col-12">
+            <button type="button" id="generatePdf" class="btn btn-primary">Enviar formulario</button>
           </div>
   
         </form>
